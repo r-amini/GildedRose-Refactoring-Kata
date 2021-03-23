@@ -22,6 +22,9 @@ namespace csharp
                 case "Sulfuras, Hand of Ragnaros":
                     _item = new Sulfuras();
                     break;
+                case "Conjured":
+                    _item = new Conjured();
+                    break;
                 default:
                     _item = new NormalItem();
                     break;

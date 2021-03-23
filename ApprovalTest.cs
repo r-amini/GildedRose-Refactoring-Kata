@@ -22,7 +22,8 @@ namespace csharp
                                 "Aged Brie",
                                 "Backstage passes to a TAFKAL80ETC concert",
                                 "Sulfuras, Hand of Ragnaros",
-                                "Elixir of the Mongoose"},
+                                "Elixir of the Mongoose",
+                                "Conjured"},
                             new int[] { -1, 0, 4, 6, 8, 11 },
                             new int[] { 0, 1, 2, 50 }
                     );
