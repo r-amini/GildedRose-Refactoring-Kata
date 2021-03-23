@@ -28,9 +28,9 @@ namespace csharp
                     );
         }
 
-        private string TestUpdate(string Name, int SellIn, int Quality)
+        private string TestUpdate(string name, int sellIn, int quality)
         {
-            IList<Item> Items = new List<Item> { new Item { Name = Name, SellIn = SellIn, Quality = Quality } };
+            IList<Item> Items = new List<Item> { new Item { Name = name, SellIn = sellIn, Quality = quality } };
             GildedRose app = new GildedRose(Items);
             app.UpdateQuality();
             return Items[0].ToString();
