@@ -6,4 +6,4 @@ You can just fetch the main branch, and run it by Visual Studio.
 
 # Note
 
-I tried to do this exercise with the least changes to external files like Program.cs. It means, I tried not to change too much files.
+I tried to do this exercise with the least changes to the external files like Program.cs. It means, I tried not to change too many files.
