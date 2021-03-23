@@ -5,5 +5,7 @@ In this exercise, I created some test cases to cover all constraints. Then, I re
 You can just fetch the main branch, compile, test and run it by Visual Studio.
 
 # Note
-
 I tried to do this exercise with the least changes to the external files like Program.cs. It means, I tried not to change too many files.
+
+# Test
+For testing porpuse, I used approval test since I wanted to test a combination of inputs.
