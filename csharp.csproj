@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IntExtension.cs" />
     <Compile Include="Conjured.cs" />
     <Compile Include="ItemFactory.cs" />
     <Compile Include="AgedBrie.cs" />
