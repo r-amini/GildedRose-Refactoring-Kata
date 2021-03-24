@@ -6,22 +6,27 @@ using System.Threading.Tasks;
 
 namespace csharp
 {
-    class NormalItem : IItem
+    class NormalItem : AbstractItem
     {
-        public void UpdateItem(Item item)
+        public NormalItem(string name, int sellIn, int quality)
+            : base(name, sellIn, quality)
         {
-            if (item.Quality > 0)
+        }
+
+        public override void UpdateItem()
+        {
+            if (Quality > 0)
             {
-                item.Quality = item.Quality.Increase(-1);
+                Quality = Quality.Increase(-1);
             }
 
-            item.SellIn = item.SellIn.Increase(-1);
+            SellIn = SellIn.Increase(-1);
 
-            if (item.SellIn < 0)
+            if (SellIn < 0)
             {
-                if (item.Quality > 0)
+                if (Quality > 0)
                 {
-                    item.Quality = item.Quality.Increase(-1);
+                    Quality = Quality.Increase(-1);
                 }
             }
         }

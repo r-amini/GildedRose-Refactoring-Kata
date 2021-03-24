@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace csharp
 {
-    class Sulfuras : IItem
+    class Sulfuras : AbstractItem
     {
-        public void UpdateItem(Item item)
+        public Sulfuras(int sellIn, int quality)
+            : base("Sulfuras, Hand of Ragnaros", sellIn, quality)
+        {
+        }
+
+        public override void UpdateItem()
         {
             
         }

@@ -8,32 +8,21 @@ namespace csharp
 {
     class ItemFactory
     {
-        private readonly IItem _item = null;
-        public ItemFactory(Item item)
+        public static AbstractItem CreateItem(Item item)
         {
             switch (item.Name)
             {
                 case "Aged Brie":
-                    _item = new AgedBrie();
-                    break;
+                    return new AgedBrie(item.SellIn, item.Quality);
                 case "Backstage passes to a TAFKAL80ETC concert":
-                    _item = new BackstagePasses();
-                    break;
+                    return new BackstagePasses(item.SellIn, item.Quality);
                 case "Sulfuras, Hand of Ragnaros":
-                    _item = new Sulfuras();
-                    break;
-                case "Conjured":
-                    _item = new Conjured();
-                    break;
+                    return new Sulfuras(item.SellIn, item.Quality);
+                case "Conjured Mana Cake":
+                    return new Conjured(item.SellIn, item.Quality);
                 default:
-                    _item = new NormalItem();
-                    break;
+                   return new NormalItem(item.Name, item.SellIn, item.Quality);
             }
-        }
-
-        public void UpdateItem(Item item)
-        {
-            _item.UpdateItem(item);
         }
     }
 }
