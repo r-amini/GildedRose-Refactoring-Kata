@@ -8,4 +8,4 @@ You just need to fetch the main branch (master), compile, test and run it by Vis
 I tried to do this exercise with the least changes to the external files (like Program.cs). It means, I tried not to change too many files.
 
 # Test
-For testing porpuse, I used approval test since I wanted to test a combination of inputs to cover everythings in UpdateQuality function.
+For testing porpuse, I used approval test since I wanted to test a combination of inputs to cover everything in UpdateQuality function.
