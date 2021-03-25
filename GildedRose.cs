@@ -12,10 +12,11 @@ namespace csharp
 
         public void UpdateQuality()
         {
-            foreach (var item in Items)
+            for (int i = 0; i < Items.Count; i++)
             {
-                ItemFactory update = new ItemFactory(item);
-                update.UpdateItem(item);
+                var item = Items[i];
+                var updateStrategy = UpdateStrategyFactory.GetUpdateStrategy(item.Name);
+                (item.Quality, item.SellIn) = updateStrategy.UpdateQuality(item.Quality, item.SellIn);
             }
         }
     }

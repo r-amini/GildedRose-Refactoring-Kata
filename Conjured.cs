@@ -6,24 +6,26 @@ using System.Threading.Tasks;
 
 namespace csharp
 {
-    class Conjured : IItem
+    class Conjured : IUpdateStrategy
     {
-        public void UpdateItem(Item item)
+        public (int updatedQuality, int updatedSellIn) UpdateQuality(int quality, int sellIn)
         {
-            if (item.Quality > 0)
+            if (quality > 0)
             {
-                item.Quality = item.Quality.Increase(-2);
+                quality = quality.Increase(-2);
             }
 
-            item.SellIn = item.SellIn.Increase(-1);
+            sellIn = sellIn.Increase(-1);
 
-            if (item.SellIn < 0)
+            if (sellIn < 0)
             {
-                if (item.Quality > 0)
+                if (quality > 0)
                 {
-                    item.Quality = item.Quality.Increase(-2);
+                    quality = quality.Increase(-2);
                 }
             }
+
+            return (quality, sellIn);
         }
     }
 }

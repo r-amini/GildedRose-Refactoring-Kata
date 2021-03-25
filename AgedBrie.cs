@@ -6,21 +6,23 @@ using System.Threading.Tasks;
 
 namespace csharp
 {
-    class AgedBrie : IItem
+    class AgedBrie : IUpdateStrategy
     {
-        public void UpdateItem(Item item)
+        public (int updatedQuality, int updatedSellIn) UpdateQuality(int quality, int sellIn)
         {
-            item.SellIn = item.SellIn.Increase(-1);
+            sellIn = sellIn.Increase(-1);
 
-            if (item.Quality < 50)
+            if (quality < 50)
             {
-                item.Quality = item.Quality.Increase(1);
+                quality = quality.Increase(1);
 
-                if (item.SellIn < 0 && item.Quality < 50)
+                if (sellIn < 0 && quality < 50)
                 {
-                    item.Quality = item.Quality.Increase(1);
+                    quality = quality.Increase(1);
                 }
             }
+
+            return (quality, sellIn);
         }
     }
 }

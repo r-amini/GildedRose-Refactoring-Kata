@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace csharp
 {
-    interface IItem
+    interface IUpdateStrategy
     {
-        void UpdateItem(Item item);
+        (int updatedQuality, int updatedSellIn) UpdateQuality(int quality, int sellIn);
     }
 }

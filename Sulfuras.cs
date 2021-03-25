@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace csharp
 {
-    class Sulfuras : IItem
+    class Sulfuras : IUpdateStrategy
     {
-        public void UpdateItem(Item item)
+        public (int updatedQuality, int updatedSellIn) UpdateQuality(int quality, int sellIn)
         {
-            
+            return (quality, sellIn);
         }
     }
 }
