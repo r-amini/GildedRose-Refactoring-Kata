@@ -6,47 +6,44 @@ using System.Threading.Tasks;
 
 namespace csharp
 {
-    class BackstagePasses : AbstractItem
+    class BackstagePasses : IUpdateStrategy
     {
-        public BackstagePasses(int sellIn, int quality)
-            : base("Backstage passes to a TAFKAL80ETC concert", sellIn, quality)
+        public (int updatedQuality, int updatedSellIn) UpdateQuality(int quality, int sellIn)
         {
-        }
-
-        public override void UpdateItem()
-        {
-            if (Quality < 50)
+            if (quality < 50)
             {
-                Quality = Quality.Increase(1);
+                quality = quality.Increase(1);
 
-                if (Quality < 50)
+                if (quality < 50)
                 {
-                    if (SellIn < 11)
+                    if (sellIn < 11)
                     {
-                        Quality = Quality.Increase(1);
+                        quality = quality.Increase(1);
                     }
-                    if (SellIn < 6)
+                    if (sellIn < 6)
                     {
-                        Quality = Quality.Increase(1);
+                        quality = quality.Increase(1);
                     }
                 }
 
-                SellIn = SellIn.Increase(-1);
+                sellIn = sellIn.Increase(-1);
 
-                if (SellIn < 0)
+                if (sellIn < 0)
                 {
-                    Quality = Quality - Quality;
+                    quality = quality.Increase(-1 * quality);
                 }
             }
             else
             {
-                SellIn = SellIn.Increase(-1);
+                sellIn = sellIn.Increase(-1);
 
-                if (SellIn < 0)
+                if (sellIn < 0)
                 {
-                    Quality = Quality - Quality;
+                    quality = quality.Increase(-1 * quality);
                 }
             }
+
+            return (quality, sellIn);
         }
     }
 }

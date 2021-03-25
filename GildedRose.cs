@@ -15,11 +15,8 @@ namespace csharp
             for (int i = 0; i < Items.Count; i++)
             {
                 var item = Items[i];
-                var abstractItem = ItemFactory.CreateItem(item);
-
-                abstractItem.UpdateItem();
-                item.SellIn = abstractItem.SellIn;
-                item.Quality = abstractItem.Quality;
+                var updateStrategy = UpdateStrategyFactory.GetUpdateStrategy(item.Name);
+                (item.Quality, item.SellIn) = updateStrategy.UpdateQuality(item.Quality, item.SellIn);
             }
         }
     }

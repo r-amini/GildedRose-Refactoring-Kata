@@ -6,16 +6,11 @@ using System.Threading.Tasks;
 
 namespace csharp
 {
-    class Sulfuras : AbstractItem
+    class Sulfuras : IUpdateStrategy
     {
-        public Sulfuras(int sellIn, int quality)
-            : base("Sulfuras, Hand of Ragnaros", sellIn, quality)
+        public (int updatedQuality, int updatedSellIn) UpdateQuality(int quality, int sellIn)
         {
-        }
-
-        public override void UpdateItem()
-        {
-            
+            return (quality, sellIn);
         }
     }
 }

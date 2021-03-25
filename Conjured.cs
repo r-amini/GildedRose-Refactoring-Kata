@@ -6,29 +6,26 @@ using System.Threading.Tasks;
 
 namespace csharp
 {
-    class Conjured : AbstractItem
+    class Conjured : IUpdateStrategy
     {
-        public Conjured(int sellIn, int quality)
-            : base("Conjured Mana Cake", sellIn, quality)
+        public (int updatedQuality, int updatedSellIn) UpdateQuality(int quality, int sellIn)
         {
-        }
-
-        public override void UpdateItem()
-        {
-            if (Quality > 0)
+            if (quality > 0)
             {
-                Quality = Quality.Increase(-2);
+                quality = quality.Increase(-2);
             }
 
-            SellIn = SellIn.Increase(-1);
+            sellIn = sellIn.Increase(-1);
 
-            if (SellIn < 0)
+            if (sellIn < 0)
             {
-                if (Quality > 0)
+                if (quality > 0)
                 {
-                    Quality = Quality.Increase(-2);
+                    quality = quality.Increase(-2);
                 }
             }
+
+            return (quality, sellIn);
         }
     }
 }

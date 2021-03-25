@@ -10,11 +10,12 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>csharp</RootNamespace>
     <AssemblyName>csharp</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -63,13 +64,13 @@
   <ItemGroup>
     <Compile Include="IntExtension.cs" />
     <Compile Include="Conjured.cs" />
-    <Compile Include="ItemFactory.cs" />
+    <Compile Include="UpdateStrategyFactory.cs" />
     <Compile Include="AgedBrie.cs" />
     <Compile Include="ApprovalTest.cs" />
     <Compile Include="BackstagePasses.cs" />
     <Compile Include="GildedRose.cs" />
     <Compile Include="GildedRoseTest.cs" />
-    <Compile Include="AbstractItem.cs" />
+    <Compile Include="IUpdateStrategy.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="NormalItem.cs" />
     <Compile Include="Program.cs" />
